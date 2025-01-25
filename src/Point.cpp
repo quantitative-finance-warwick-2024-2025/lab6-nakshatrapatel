@@ -8,12 +8,12 @@ Point::Point(double x, double y)
 
 double Point::x() const
 {
-  /// FILL THIS IN
+  return m_x;
 }
 
 double Point::y() const
 {
-  /// FILL THIS IN
+  return m_y;
 }
 
 double Point::compute_norm() const
@@ -23,15 +23,23 @@ double Point::compute_norm() const
 
 void Point::info() const
 {
-  /// FILL THIS IN
+  std::cout<< "coordinates of the point: " << m_x, m_y;
+  std::cout<< "2 norm: " << Point::compute_norm();
 }
 
 Point Point::add(const Point* p) const
 {
-  /// FILL THIS IN
+  double x_1 = 0, y_1 = 0;
+  const Point local_p = *p;
+  x_1 = local_p.x() + m_x;
+  y_1 = local_p.y() + m_y;
+  return Point(x_1,y_1);
 }
 
 Point Point::subtract(const Point* p) const
 {
-  /// FILL THIS IN
+  double x_1 = 0, y_1 = 0;
+  x_1 = m_x - p->x();
+  y_1 = m_y - p->y();
+  return Point(x_1,y_1);
 }
